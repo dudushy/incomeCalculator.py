@@ -45,7 +45,10 @@ def main() -> None:
         
         print("\n- - - - - - - - - - - - - - - - - - - - - - - -\n")
         for item in output:
-            print(f"{item}: " + "${:0,.2f}\n".format(output[item]))
+            if item == "perYear*":
+                print(f"{item}: " + "${:0,.2f}".format(output[item]) + " (Christmas bonus)\n")
+            else:
+                print(f"{item}: " + "${:0,.2f}\n".format(output[item]))
         print("- - - - - - - - - - - - - - - - - - - - - - - -\n")
         
         if input("Run again? (y/n)\n>>> ").lower() == "n":
